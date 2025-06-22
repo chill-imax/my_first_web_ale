@@ -1,0 +1,511 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins';    
+}
+
+:root {
+    --transition: 0.3s ease-in-out;
+    --gradient-color: linear-gradient(to right, rgb(0, 157, 255), rgb(255,0,255));
+}
+
+/* Contenedor principal */
+.fondo-responsive {
+    max-width: 1920px;
+    min-width: 400px;
+    margin: auto;
+    display: flexbox;
+    flex-wrap: wrap;
+}
+
+/* Header */
+header{
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: rgba(13, 9, 87, 0.8);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+
+.logo{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+.nav-links{
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+    align-items: center;
+    white-space: nowrap;
+
+}
+
+li a{
+    position: relative;
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+li a::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 5px;
+    top: 25px;
+    border-radius: 1rem;
+    transition: 0.1s ease-in-out;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255,0,255));
+}
+
+li a:hover::before{
+    width: 100%;
+}
+
+
+#menu-icon{
+    font-size: 2rem;
+    display: none;
+}
+/* Secciones */
+section {
+    width: 100%;
+    padding: 5rem 10%;
+    text-align: center;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/*presentacion ale*/
+
+.about .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    text-align: center; /* Alinea el texto al centro si es necesario */
+}
+
+.about .about-container .img, .about .about-container .text {
+    flex: 1 1 100%; /* Hace que cada elemento ocupe el 100% en pantallas más pequeñas */
+}
+
+.about .about-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.about .about-container .text {
+    padding: 2rem;/* Mantiene el texto dentro de un tamaño adecuado */
+}
+
+
+.info-box h3{
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.info-box h1{
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.info-box span{
+    background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+    color:  #d000ff !important;  /* Esto asegura que los spans mantengan su color original */
+    font-weight: inherit !important;
+}
+
+.socials{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.socials i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: rgb(12, 4, 65);
+    transition: var(--transition);
+}
+
+.socials i:hover{
+    transform: scale(1.1) ;
+}
+
+/* Botones */
+.btn-group{
+    display: flex;
+    gap: 1rem;
+    
+}
+
+.btn{
+    border: 2px solid #6C63FF;
+    color: #6C63FF;
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: var(--transition);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    display: flex;
+    
+}
+
+.btn:hover{
+    background-color: rgb(216, 169, 250);
+    color: white;
+}
+
+.btn2 {
+    background-color: #6C63FF; /* Color de fondo suave pero vibrante */
+    color: white; /* Color del texto blanco */
+    cursor: pointer; /* Cambiar el cursor cuando el mouse pasa por encima */
+    text-decoration: none; /* Eliminar el subrayado en enlaces */
+    display: inline-block; /* Asegura que el botón se comporte como un bloque */
+    white-space: nowrap;
+    transition: var(--transition);
+    border: none;
+    border-radius: 3rem;
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.btn2:hover {
+    background-color: #4C3EDE; /* Un color más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandar al hacer hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para resaltar el botón */
+}
+
+.btn2:focus {
+    outline: none; /* Eliminar el borde de enfoque */
+}
+
+.btn2:active {
+    transform: scale(1.05); /* Efecto de presionar el botón */
+    background-color: #3A2BEB; /* Color aún más oscuro al presionar */
+}
+
+
+/* Social Media */
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.socials i {
+    font-size: 2.5rem;
+    color: rgb(12, 4, 65);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.socials i:hover {
+    transform: scale(1.1);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.grid-card{
+    border: 2px solid rgb(45, 1, 79);
+    border-radius: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.grid-card:hover{
+    transform: scale(1.02);
+    background-color: rgb(45, 1, 79);
+    color: white;
+}
+
+.grid-card i{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid-card span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: linear-gradient(to right, #009dff, #ff00ff);
+    background-clip: text;
+    color: transparent;    
+}
+
+/* Estilo para otros idiomas */
+.grid-card span.translate {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #d000ff !important; 
+    font-weight: inherit !important;
+}
+
+
+/* Formulario de Contacto */
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    border-radius: 3rem;
+    margin: 0.2rem;
+    border: 2px solid rgb(129, 0, 227)  ;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.input-group textarea {
+    border-radius: 2rem;
+    resize: none;
+    height: 150px;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    font-size: 1.6rem;
+    color: gray;
+}
+
+.input-group i {
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: rgb(129, 0, 227);
+    pointer-events: none;
+}
+
+.contact-btn{
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+}
+
+footer ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+}
+
+footer ul li a {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(219.219,219);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-color);
+}
+
+@media (max-width: 920px) {
+    header #menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1rem;
+        color: white;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 1rem; /* Ajusté el border-radius para hacerlo más suave */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadí sombra para más visibilidad */
+    }
+
+    .nav-links li {
+        margin-top: 1rem; /* Reducido para que los elementos tengan mejor espacio */
+        padding: 1rem;
+        font-size: 1.4rem; /* Reducido el tamaño de la fuente para pantallas pequeñas */
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    header {
+        padding: 1rem 2rem; /* Reducí el padding para adaptarlo mejor a pantallas pequeñas */
+        gap: 2rem; /* Reducido el espacio entre los elementos del header */
+    }
+
+    header .logo {
+        font-size: 1.4rem; /* Ajusté el tamaño del logo para que no ocupe tanto espacio */
+    }
+
+    .about-container img {
+        width: 85vw; /* Ajusté el ancho de la imagen para que se vea proporcionada */
+        max-width: 100%; /* Aseguro que no se desborde */
+    }
+
+    .input-box input,
+    .input-box textarea {
+        max-width:  100% ;
+        padding: 0.5rem 2rem; /* Ajusté el padding para dejar más espacio */
+        width: 100%; /* Aumento el ancho para que se ajuste mejor */
+        font-size: 1.4rem; /* Reducí el tamaño de la fuente para mayor legibilidad */
+    }
+
+    .input-box input::placeholder {
+        font-size: 1.4rem; /* Ajusté el tamaño del placeholder para ser coherente con el input */
+    }
+
+    footer ul {
+        gap: 0.5rem; /* Reduje el espacio entre los elementos del footer */
+        flex-wrap: wrap;
+    }
+
+    /* Asegurando que los íconos en los inputs se vean bien */
+    .input-box i {
+        font-size: 1.4rem; /* Reducido el tamaño del ícono para que no sea demasiado grande */
+    }
+}
+
+/*modal de info contact*/
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #4CAF50;
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+/*cerrar modal*/
+.close {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*mensaje toast para enviar los datos al user*/
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #323232;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.toast.success {
+    background-color: #28a745;
+}
+
+.toast.error {
+    background-color: #dc3545;
+}
+
+/* Hacer que aparezca */
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
